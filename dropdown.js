@@ -138,7 +138,7 @@ define(function(require) {
 		 *  Public access to the utility method that calculates the catalyst element's current position with respect 
          *  to the document. This information is used for calculating where to position the dropdown. It's public 
          *  because this information will be helpful when  writing a custom "setPosition" implementation.
-		 *  @method getCatalystPosition
+		 *  @method getCatalystPosition 
 		 *  @returns {HashMap} : XY coordinates of the catalyst, as well as dimensions. e.g. { x:x, y:y, w:width, h:height }
 		 */
 		getCatalystPosition: function () {
