@@ -23,13 +23,13 @@ define(function(require) {
 	 * 	an HTML string to the content area.
 	 * 
 	 * 	Example Usage:
-	 * 		var myButton = $("#my-button-catalyst");
-	 *		var myDropdown = new Dropdown(myButton, {
-	 *			className: "sean_connery", 	// optional
-	 *			fadeEffectDuration: 500,	// optional
-	 *			anchorPoint: "right below"	// optional
-	 *		});
-	 *		myDropdown.render("Hello world!");
+	 *	    var myButton = $("#my-button-catalyst");
+	 *	    var myDropdown = new Dropdown(myButton, {
+	 *		    className: "sean_connery", 	// optional
+	 *		    fadeEffectDuration: 500,	// optional
+	 *		    anchorPoint: "right below"	// optional
+	 *	    });
+	 *	    myDropdown.render("Hello world!");
 	 * 
 	 * 	@module dropdown
 	 * 	@constructor
@@ -92,8 +92,8 @@ define(function(require) {
 		 ********************************************************************************************/
 		
 		/**
-		 * 	Cancels a pending "hide" operation.
-		 * 	@method cancelHide
+		 *  Cancels a pending "hide" operation.
+		 *  @method cancelHide
 		 */
 		cancelHide: function () {
 			if (this.hideTimer) {
@@ -103,8 +103,8 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Clear the dropdown of content.
-		 * 	@method clear
+		 *  Clear the dropdown of content.
+		 *  @method clear
 		 */
 		clear: function () {
 			$(this.elements.content).empty();
