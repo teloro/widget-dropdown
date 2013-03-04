@@ -111,8 +111,8 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Destroy this instance and related DOM pollution.
-		 * 	@method destroy
+		 *  Destroy this instance and related DOM pollution.
+		 *  @method destroy
 		 */
 		destroy: function () {
 			
@@ -135,28 +135,28 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Public access to the utility method that calculates the catalyst element's current position with respect 
+		 *  Public access to the utility method that calculates the catalyst element's current position with respect 
          *  to the document. This information is used for calculating where to position the dropdown. It's public 
          *  because this information will be helpful when  writing a custom "setPosition" implementation.
-		 * 	@method getCatalystPosition
-		 * 	@returns {HashMap} : XY coordinates of the catalyst, as well as dimensions. e.g. { x:x, y:y, w:width, h:height }
+		 *  @method getCatalystPosition
+		 *  @returns {HashMap} : XY coordinates of the catalyst, as well as dimensions. e.g. { x:x, y:y, w:width, h:height }
 		 */
 		getCatalystPosition: function () {
 			return this._getCatalystPosition();
 		},
 		
 		/**
-		 * 	Returns a reference to the root element of the dropdown.
-		 * 	@method getRootElement
-		 * 	@returns {HTMLElement} : DOM reference to the root element of the dropdown.
+		 *  Returns a reference to the root element of the dropdown.
+		 *  @method getRootElement
+		 *  @returns {HTMLElement} : DOM reference to the root element of the dropdown.
 		 */
 		getRootElement: function () {
 			return (this.elements.root && this.elements.root.length) ? this.elements.root.get(0) : null; 
 		},
 			
 		/**
-		 * 	Make the DD invisible.
-		 * 	@method hide
+		 *  Make the DD invisible.
+		 *  @method hide
 		 */
 		hide: function () {
 			var rootEl = $(this.elements.root);
@@ -170,9 +170,9 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Determine whether or not the dropdown is currently visible to the user.
-		 *	@method isVisible
-		 *	@returns {Boolean} : Is the dropdown currently visible? 
+		 *  Determine whether or not the dropdown is currently visible to the user.
+         *  @method isVisible
+		 *  @returns {Boolean} : Is the dropdown currently visible? 
 		 */
 		isVisible: function () {
 			try {
@@ -183,12 +183,12 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Given an HTML string or a DOM fragment, write/render that content inside the dropdown.
-		 * 	@method render
-		 * 	@param {String|HTMLElement[]} content : Content to be written to the content area of the dropdown.
-		 * 	@param {Boolean} isAppend : If TRUE, existing content will be appended to.
-         *                      Otherwise, existing content will be overwritten with new content.
-		 * 	@returns {Boolean} : Was content successfully written?
+		 *  Given an HTML string or a DOM fragment, write/render that content inside the dropdown.
+		 *  @method render
+		 *  @param {String|HTMLElement[]} content : Content to be written to the content area of the dropdown.
+		 *  @param {Boolean} isAppend : If TRUE, existing content will be appended to.
+         *              Otherwise, existing content will be overwritten with new content.
+		 *  @returns {Boolean} : Was content successfully written?
 		 */
 		render: function (content, isAppend) {
 			if (content) {
@@ -201,19 +201,19 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Public alias for "_setPosition" method. Repositions the dropdown in its default position beneath 
+		 *  Public alias for "_setPosition" method. Repositions the dropdown in its default position beneath 
          *  the catalyst element.
-		 * 	@method setPosition
+		 *  @method setPosition
 		 */
 		setPosition: function () {
 			this._setPosition();
 		},
 		
 		/**
-		 * 	Alter the dropdown's default positioning with relative offset values.
-		 * 	@method setPositionOffset
-		 * 	@param {Integer} x : Number of pixels to offset on x-axis. Can be a negative value.
-		 * 	@param {Integer} y : Number of pixels to offset on y-axis. Can be a negative value.
+		 *  Alter the dropdown's default positioning with relative offset values.
+		 *  @method setPositionOffset
+		 *  @param {Integer} x : Number of pixels to offset on x-axis. Can be a negative value.
+		 *  @param {Integer} y : Number of pixels to offset on y-axis. Can be a negative value.
 		 */
 		setPositionOffset: function (x, y) {
 			if ($.isNumeric(x)) {
@@ -225,8 +225,8 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Make the DD visible.
-		 * 	@method show
+		 *  Make the dropdown UI visible.
+		 *  @method show
 		 */
 		show: function () {
 			this.setPosition();
@@ -238,13 +238,13 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Subscribe to custom event.
-		 * 	@method subscribe
-		 * 	@param {String} eventName : Name of the custom event to listen to. This event will be 
+		 *  Subscribe to custom event.
+		 *  @method subscribe
+		 *  @param {String} eventName : Name of the custom event to listen to. This event will be 
          *              automatically namespaced.
-		 * 	@param {Function} callback : Callback function to be executed if the event of interest occurs.
-		 * 	@param {Boolean} once : If TRUE, this event can only ever be triggered once.
-		 * 	@returns {Boolean} : Was this event successfully subscribed to?
+		 *  @param {Function} callback : Callback function to be executed if the event of interest occurs.
+		 *  @param {Boolean} once : If TRUE, this event can only ever be triggered once.
+		 *  @returns {Boolean} : Was this event successfully subscribed to?
 		 */
 		subscribe: function (eventName, callback, once) {
 			if (typeof eventName === "string" && $.isFunction(callback)) {
@@ -255,9 +255,9 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Toggle show/hide of the dropdown. Delegates to the private equivalent ("_toggle").
-		 * 	@method toggle
-		 * 	@returns {Boolean} : If TRUE, the dropdown was just made visible. Otherwise, the dropdown was just 
+		 *  Toggle show/hide of the dropdown. Delegates to the private equivalent ("_toggle").
+		 *  @method toggle
+		 *  @returns {Boolean} : If TRUE, the dropdown was just made visible. Otherwise, the dropdown was just 
          *              made invisible.
 		 */
 		toggle: function () {
@@ -265,11 +265,11 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Unsubscribe from custom event.
-		 * 	@method unsubscribe
-		 * 	@param {String} eventName : Name of the custom event to unsubscribe from.
-		 * 	@param {Function} callback : The callback function supplied at subscription time. If no callback is specified, all listeners to this event will be unsubscribed. 
-		 * 	@returns {Boolean} : Was this event successfully unsubscribed from?
+		 *  Unsubscribe from custom event.
+		 *  @method unsubscribe
+		 *  @param {String} eventName : Name of the custom event to unsubscribe from.
+		 *  @param {Function} callback : The callback function supplied at subscription time. If no callback is specified, all listeners to this event will be unsubscribed. 
+		 *  @returns {Boolean} : Was this event successfully unsubscribed from?
 		 */
 		unsubscribe: function (eventName, callback) {
 			if (typeof eventName === "string") {
@@ -286,11 +286,11 @@ define(function(require) {
 		 ********************************************************************************************/
 		
 		/**
-		 * 	Parse the configuration object and apply changes for this instance.
+		 *  Parse the configuration object and apply changes for this instance.
 		 *  Intended to be run only once during initialization.
-		 * 	@method _applyConfiguration
-		 * 	@param {HashMap} config : Configuration object.
-		 * 	@private
+		 *  @method _applyConfiguration
+		 *  @param {HashMap} config : Configuration object.
+		 *  @private
 		 */
 		_applyConfiguration: function (config) {
 			if ($.isPlainObject(config)) {
@@ -337,10 +337,10 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Construct DOM skeleton for this dropdown. This is meant to be a one-time operation called during 
+		 *  Construct DOM skeleton for this dropdown. This is meant to be a one-time operation called during 
          *  initialization.
-		 * 	@method _buildStructure
-		 * 	@private
+		 *  @method _buildStructure
+		 *  @private
 		 */
 		_buildStructure: function () {
 			
@@ -369,63 +369,63 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Define internal methods for how to position the dropdown with respect to the catalyst.
+		 *  Define internal methods for how to position the dropdown with respect to the catalyst.
          *  The "strategy" will be chosen based on the anchor point (e.g. "left below").
-		 * 	@method _defineAnchorPointStrategies
-		 * 	@private
+		 *  @method _defineAnchorPointStrategies
+		 *  @private
 		 */
 		_defineAnchorPointStrategies: function () {
 			if (!this.anchorPointStrategies) {
 				this.anchorPointStrategies = {
 					// TO-DO: Does the "above" positioning actually work? Still untested.
 					/*
-					"above": 	$.proxy(function () {
-									var catalystPosition = this._getCatalystPosition();
-									return {
-										"bottom":	parseInt($(document).height() - ((0 - this.positionOffset.y) + catalystPosition.y + catalystPosition.h), 10) + "px",
-										"top": 		"auto"
-									};
-								}, this),
-					*/
-					"below": 	$.proxy(function () {
-									var catalystPosition = this._getCatalystPosition();
-									return {
-										"top":		parseInt(this.positionOffset.y + catalystPosition.y + catalystPosition.h, 10) + "px",
-										"bottom":	"auto"
-									};
-								}, this),
-					"left": 	$.proxy(function () {
-									var catalystPosition = this._getCatalystPosition();
-									return {
-										"left":		parseInt(this.positionOffset.x + catalystPosition.x, 10) + "px",
-										"right":	"auto"
-									};
-								}, this),
-					"right": 	$.proxy(function () {
-									var catalystPosition = this._getCatalystPosition();
-									return {
-										"right":	parseInt($(window).width() - ((0 - this.positionOffset.x) + catalystPosition.x + catalystPosition.w), 10) + "px",
-										"left":		"auto"
-									};
-								}, this)
-				};
-			}
-		},
+					"above":    $.proxy(function () {
+                                    var catalystPosition = this._getCatalystPosition();
+                                    return {
+                                        "bottom":	parseInt($(document).height() - ((0 - this.positionOffset.y) + catalystPosition.y + catalystPosition.h), 10) + "px",
+                                        "top": 		"auto"
+                                    };
+                                }, this),
+                    */
+                    "below":    $.proxy(function () {
+                                    var catalystPosition = this._getCatalystPosition();
+                                    return {
+                                        "top":		parseInt(this.positionOffset.y + catalystPosition.y + catalystPosition.h, 10) + "px",
+                                        "bottom":	"auto"
+                                    };
+                                }, this),
+                    "left":     $.proxy(function () {
+                                    var catalystPosition = this._getCatalystPosition();
+                                    return {
+                                        "left":		parseInt(this.positionOffset.x + catalystPosition.x, 10) + "px",
+                                        "right":	"auto"
+                                    };
+                                }, this),
+                    "right":    $.proxy(function () {
+                                    var catalystPosition = this._getCatalystPosition();
+                                    return {
+                                        "right":	parseInt($(window).width() - ((0 - this.positionOffset.x) + catalystPosition.x + catalystPosition.w), 10) + "px",
+                                        "left":		"auto"
+                                    };
+                                }, this)
+                };
+            }
+        },
 		
 		/**
-		 * 	Trigger/fire custom event. A reference to this instance will be supplied as an argument to the callback.
-		 * 	@method _fireCustomEvent
-		 * 	@param {String} eventName : Name of the event to fire.
-		 * 	@private
+		 *  Trigger/fire custom event. A reference to this instance will be supplied as an argument to the callback.
+		 *  @method _fireCustomEvent
+		 *  @param {String} eventName : Name of the event to fire.
+		 *  @private
 		 */
 		_fireCustomEvent: function (eventName) {
 			this.catalyst.trigger(this._getEventName(eventName), this); // supply ref to this instance to the callback
 		},
 		
 		/**
-		 * 	Get catalyst element position and dimension information. Note: position is relative to the document.
-		 * 	@method _getCatalystPosition
-		 * 	@private
+		 *  Get catalyst element position and dimension information. Note: position is relative to the document.
+		 *  @method _getCatalystPosition
+		 *  @private
 		 */
 		_getCatalystPosition: function () {
 			var catalyst = this.catalyst;
@@ -443,22 +443,22 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Internal utility. Given an event name, return it with a namespace suffix (for use with jQuery event binding).
-		 * 	@method _getEventName
-		 * 	@param {String} eventName : Event name to be namespaced.
-		 * 	@returns {String} : Event name with namespace, or NULL if bad argument supplied.
-		 * 	@private
+		 *  Internal utility. Given an event name, return it with a namespace suffix (for use with jQuery event binding).
+		 *  @method _getEventName
+		 *  @param {String} eventName : Event name to be namespaced.
+		 *  @returns {String} : Event name with namespace, or NULL if bad argument supplied.
+		 *  @private
 		 */
 		_getEventName: function (eventName) {
 			return (typeof eventName === "string" || $.isArray(eventName)) ? eventName + "." + this.namespace.event : null;
 		},
 		
 		/**
-		 * 	Internal utility. Given an array of event names, return them with namespace suffixes 
+		 *  Internal utility. Given an array of event names, return them with namespace suffixes 
          *  (for use with jQuery event binding).
-		 * 	@method _getEventNames
-		 * 	@param {String[]} eventNames : Event names to be namespaced.
-		 * 	@returns {String[]} : Event names with namespace, or NULL if had argument supplied.
+		 *  @method _getEventNames
+		 *  @param {String[]} eventNames : Event names to be namespaced.
+		 *  @returns {String[]} : Event names with namespace, or NULL if had argument supplied.
 		 */
 		_getEventNames: function (eventNames) {
 			if (eventNames) {
@@ -473,11 +473,11 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Given an anchor point strategy, determine the positioning of the dropdown with respect to the catalyst. 
-		 * 	@method _getPositionByAnchorPoint
-		 * 	@returns {HashMap} : Object containing CSS positioning information, designed to be directly applied
+		 *  Given an anchor point strategy, determine the positioning of the dropdown with respect to the catalyst. 
+		 *  @method _getPositionByAnchorPoint
+		 *  @returns {HashMap} : Object containing CSS positioning information, designed to be directly applied
          *              to an element via jQuery.
-		 * 	@private
+		 *  @private
 		 */
 		_getPositionByAnchorPoint: function () {
 			
@@ -500,8 +500,8 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	@method _getUniqueId
-		 * 	@private
+		 *  @method _getUniqueId
+		 *  @private
 		 */
 		_getUniqueId: function () {
 			if (!$.isNumeric(this.uniqueId)) {
@@ -511,10 +511,10 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Various one-time initialization.
-		 * 	@method _initialize
-		 * 	@param {HashMap} config : Configuration object (from the constructor arguments).
-		 * 	@private
+		 *  Various one-time initialization.
+		 *  @method _initialize
+		 *  @param {HashMap} config : Configuration object (from the constructor arguments).
+		 *  @private
 		 */
 		_initialize: function (config) {
 			
@@ -553,10 +553,10 @@ define(function(require) {
 			}, this));
 			
 			/*
-			 * 	Clicks outside the dropdown should hide it. Required conditions:
-			 * 		1) The dropdown is currently visible.
-			 * 		2) The click did not originate from our catalyst (or any of its children).
-			 * 		3) The click did not originate from the dropdown itself (or any of its children).
+			 *  Clicks outside the dropdown should hide it. Required conditions:
+			 *      1) The dropdown is currently visible.
+			 *      2) The click did not originate from our catalyst (or any of its children).
+			 *      3) The click did not originate from the dropdown itself (or any of its children).
 			 */
 			$(document.body).on(this._getEventName("click"), $.proxy(function (ev) {
 				var $evTarget = $(ev.target);
@@ -570,9 +570,9 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Establish event listeners on the catalyst for toggling visibility of the dropdown based on user interaction.
-		 *	@method _initializeCatalyst 
-		 *	@private
+		 *  Establish event listeners on the catalyst for toggling visibility of the dropdown based on user interaction.
+		 *  @method _initializeCatalyst 
+		 *  @private
 		 */
 		_initializeCatalyst: function () {
 			if (!this.isManualShowEnabled && !this.isMouseDelayedShowEnabled) {
@@ -584,8 +584,8 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	@method _initializeMouseBoundaryDetection
-		 * 	@private
+		 *  @method _initializeMouseBoundaryDetection
+		 *  @private
 		 */
 		_initializeMouseBoundaryDetection: function () {
 			
@@ -617,10 +617,10 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Sets the "isMouseCursorInsideDropdown" property and notifies subscribers of the change.
-		 * 	@method _setMouseCursorInsideDropdown
-		 * 	@param {Boolean} isInside : Is the mouse cursor currently inside the dropdown wrapper?
-		 * 	@private
+		 *  Sets the "isMouseCursorInsideDropdown" property and notifies subscribers of the change.
+		 *  @method _setMouseCursorInsideDropdown
+		 *  @param {Boolean} isInside : Is the mouse cursor currently inside the dropdown wrapper?
+		 *  @private
 		 */
 		_setMouseCursorInsideDropdown: function (isInside) {
 			if (isInside) {
@@ -633,9 +633,9 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Sets the position of the dropdown with respect to the catalyst element.
-		 * 	@method _setPosition
-		 * 	@private
+		 *  Sets the position of the dropdown with respect to the catalyst element.
+		 *  @method _setPosition
+		 *  @private
 		 */
 		_setPosition: function () {
 			this.elements.root.css(this._getPositionByAnchorPoint());
@@ -643,21 +643,21 @@ define(function(require) {
 		},
 		
 		/**
-		 * 	Custom error handling.
-		 * 	@method _throwError
-		 * 	@param {String} message : Error message to show.
-		 * 	@private
+		 *  Custom error handling.
+		 *  @method _throwError
+		 *  @param {String} message : Error message to show.
+		 *  @private
 		 */
 		_throwError: function (message) {
 			console.log("Dropdown Widget : " + (message || "unknown error"));
 		},
 		
 		/**
-		 * 	Toggle show/hide of the dropdown.
-		 * 	@method _toggle
-		 * 	@returns {Boolean} : If TRUE, the dropdown was just made visible. Otherwise, the dropdown was 
+		 *  Toggle show/hide of the dropdown.
+		 *  @method _toggle
+		 *  @returns {Boolean} : If TRUE, the dropdown was just made visible. Otherwise, the dropdown was 
          *              just made invisible.
-		 * 	@private
+		 *  @private
 		 */
 		_toggle: function () {
 			if (this.isVisible()) {
@@ -672,7 +672,7 @@ define(function(require) {
 	};
 	
 	/*
-	 * 	Exports
+	 *  Exports
 	 */
 	return Dropdown;
 	
